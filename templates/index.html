@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <title>{% block title %}SkyLifeInterior{% endblock %}</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    {% load static %}
+
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-logo">SkyLifeInterior</div>
+        <ul class="nav-links">
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li><a href="{% url 'about' %}">About</a></li>
+
+            <li class="dropdown">
+                <a href="{% url 'service' %}" onclick="return false;">service</a>
+                <ul class="drop-content">
+                    <li class="dropdown-sub">
+                    <a href="{% url 'interior' %}" onclick="return false">Interior Design</a>
+                    <ul class="drop-content1">
+                        <li><a href="{% url 'residential' %}">Residential</a></li>
+                        <li><a href="{% url 'commercial' %}">commercial</a></li>
+                    </ul>
+                    </li>
+                    <li><a href="{% url 'architectural' %}">Architecture</a></li>
+                </ul>
+            </li>
+    
+            <li><a href="{% url 'contact' %}">Contect</a></li>
+        </ul>
+    </nav>
+    {% block content %}
+    <img class="banner" src="{% static 'images/homeimage.jpeg' %}" alt="image" >
+    
+    <div class="grid-container">
+        <div class="item1">
+            <h1>Design That Feels Like Home</h1>
+            <p class="lead">
+                We specialize in creating spaces that feel like home — 
+                thoughtfully designed, naturally inviting, and beautifully
+                minimal. From interior styling to full-scale architectural 
+                planning, we blend simplicity and warmth with timeless elegance.
+                Let your home tell your story — with design that’s rooted in 
+                meaning, and made to last.
+              </p>
+        </div>
+        <div class="item2">
+            <img src="{% static 'images/weare.jpeg' %}">
+        </div>
+    </div>
+    <div class="grid-containers">
+        <!-- {% for n in serviceData %}
+        <div class={{n.service_icon}}>
+            <a class="link-1" href=""> {{ n.service_title }}</a>
+                <p>{{n.service_des | slice:"0:3" | safe}}</p>
+            </div>
+        {% endfor %} -->
+    <div class="box-1">
+        <a class="link-1" href="{% url 'residential' %}">
+            <img src="{% static 'images/residentialhome.jpeg' %}" height="320" alt="residential Interior">
+            <p>Residential</p>
+        </a>
+    </div>
+    <div class="box-2">
+        <a class="link-2" href="{% url 'commercial' %}">
+          <img src="{% static 'images/offi-com.jpeg' %}" height="320" alt="Commercial Interior">
+          <p>Commercial</p>
+        </a>
+      </div>
+       
+   
+    </div>
+
+    <!-- <marquee style="background-color: crimson;" onmouseover="stop()" onmouseout="start()">
+        {% for n in serviceData %}
+            <a href="{% url 'calculator' %}?id={{n.id}}" >{{n.service_icon }}</a> &nbsp; &nbsp; &nbsp; &nbsp;
+        {% endfor %}
+    </marquee> -->
+    <div class="logos">
+        <div class="logo-slide">
+            <img src="{% static 'images/jaquar_id.svg' %}">
+            <!-- <img src="{% static 'images/radon-logo.jpeg' %}"> -->
+
+        </div>
+
+    </div>
+
+    {% endblock %}
+<footer class="footer">
+    <div class="footer-block address">
+        <h4>Address</h4>
+        <p>
+            SkyLifeInterior<br>
+            2798, Purohit Ji ka chowk<br>
+            kalyan ji ka rasta<br>
+            Indra Bazar, jaipur<br>
+            Rajasthan, 302001<br>
+            phone:
+        </p>
+    </div>
+    <div class="footer-block social-icons">
+        <h4>&copy;2025 SkyLifeInterior</h4>
+        <h5>Follow Us</h5>
+        
+        <div class="icons">
+            <i class="fas fa-facebook-f"></i>
+            <i class="fas fa-youtube"></i>
+            <i class="fas fa-instagram"></i>
+            <i class="fas fa-envelope"></i>
+        </div>
+    </div>
+</footer>
+</body>
+</html>

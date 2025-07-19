@@ -1,0 +1,123 @@
+{% extends "index.html" %}
+
+{% block title %}Calculator{% endblock %}
+
+{%block content%}
+<!-- <form method="POST" >
+    {% csrf_token %}
+    <label>value 1</label><br>
+    <input type="text" name="val1" class="form-control"/><br>
+    <select name="opr" class="form-control">
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="*">*</option>
+        <option value="/">/</option>
+    </select><br>
+    <label>value 2</label><br>
+    <input type="text" name="val2" class="form-control"><br>
+
+    <button type="submit">calculator</button><br>
+
+    <label>output</label><br>
+    <input type="text" value="{{c}}" class="form-control"/><br>
+
+</form> -->
+<!-- <form method="POST" >
+    {% csrf_token %}
+    <label>value</label><br>
+    <input type="text" name="num" class="form-control"/><br>
+
+    <button type="submit">Odd/Even</button><br>
+
+    <label>output</label><br>
+    <input type="text" value="{{c}}" class="form-control"/><br>
+</form> -->
+<div class="container">
+<form method="POST">
+    {% if error %}
+    <div class="alert alert-danger" role="alert">
+        please enter the value
+    </div>
+    {% endif %}
+    {% csrf_token %}
+    <label>sub 1</label><br>
+    <input type="text" name="sub1" class="form-control"><br>
+    <label>sub 2</label><br>
+    <input type="text" name="sub2" class="form-control"><br>
+    <label>sub 3</label><br>
+    <input type="text" name="sub3" class="form-control"><br>
+    <label>sub 4</label><br>
+    <input type="text" name="sub4" class="form-control"><br>
+
+
+    <button type="submit">calculator</button><br>
+
+    <label>total</label><br>
+    <input type="text" value="{{total}}" class="form-control"/><br>
+    <label>percent</label><br>
+    <input type="text" value="{{per1}}" class="form-control"/><br>
+    <label>division</label><br>
+    <input type="text" value="{{divi}}" class="form-control"/><br>
+
+</form>
+</div>
+<br>
+
+<!-- <div>
+    {% if newsDetails %}
+    <h1 class="mb-10">{{ serviceData.service_title }}</h1>
+    <p>{{ newsDetails.service_des }}</p>
+    {% else %}
+        <p>No service details found for ID: {{ request.GET.id }}</p>
+    {% endif %}
+</div> -->
+<div>
+    <form method="get">
+        <input type="text" name="name1" value="" /><br>
+        <input type="submit" value="search" /><br>
+
+    {% for n in pageFinal %}
+            <h1>{{ n.service_title }}</h1>
+            <p>{{n.service_des| safe}}</p>
+        </form>
+    </div>
+    {% empty %}
+    no record found
+    {% endfor %}
+</div>
+<div>
+    {% if pageFinal.has_previous %}
+    <a href="?page=1">First</a>
+    <a href="?page={{pageFinal.previous_page_number }}">previous</a>
+    {% endif %}
+
+    
+    <span> PAge {{  pageFinal.number }} of {{pageFinal.paginator.num_page }}</span>
+    {% for n in totalPage %}
+    <li class="page-item"><a class="page-link" href="?page={{n}}"></a></li>
+    {% endfor %}
+
+    {% if pageFinal.has_next %}
+    <a href="?page={{ pageFinal.next_page_number}}">Next</a>
+    <a href="?page={{pageFinal.paginator.num_page }}">Last</a>
+    {% endif %}
+</div>
+<!-- <div>
+    {% if service.service_img %}
+    <img src="{{ service.service_img.url }}" alt="Service Image">
+    {% else %}
+    <p>Image not found</p>
+    {% endif %}
+</div> -->
+<div>
+
+    <img src= "/media/serviced/Screenshot_2025-06-13_at_11.38.47_AM.png"alt="Service Image">
+ 
+   
+</div>
+<!-- <marquee style="background-color: crimson;">
+    {% for n in serviceData %}
+        {{ n.service_icon }}
+    {% endfor %}
+</marquee> -->
+{% endblock%}

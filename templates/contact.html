@@ -1,0 +1,62 @@
+{% extends "index.html" %}
+
+    {% block title %}Contect{% endblock %}
+
+    {% block content %}
+    {% if success %}
+        <p>Your message has been sent successfully </p>
+    {% endif %}
+
+    <form  method="POST" class="form-group"> 
+        {% csrf_token %}
+      
+        <h1>Contect Us</h1>
+
+        {{ form }}
+    
+<!-- 
+        <label for="name">Name</label><br>
+        <input type="text" name="name" id="name" value="{{ form.name.value }}" required><br><br>
+
+        <label for="contactNumber">Contact number</label><br>
+        <input type="number" name="contactNumber" id="contactNumber" value="{{ form.contactNumber.value }}" required><br><br>
+
+        <label for="email">Email</label><br>
+        <input type="text" name="email" id="email" value="{{ form.email.value }}" required><br><br>
+
+        <label for="subject">Subject</label><br>
+        <input type="text" name="subject" id="subject" value="{{ form.subject.value }}" required><br><br>
+
+        <label for="message">message</label><br>
+        <textarea name="message" rows="10" cols="30" required>{{ form.message.value }}</textarea><br><br>
+         -->
+        <input type="submit" id="btn" value="Send">
+        
+
+    </form>
+    <div class="grid-map-address">
+        <div class="map-address">
+        <h1>Address</h1>
+        <p>
+            SkyLifeInterior<br>
+            2798, Purohit Ji ka chowk<br>
+            kalyan ji ka rasta<br>
+            Indra Bazar, jaipur<br>
+            Rajasthan, 302001<br>
+            phone:
+        </p>
+        </div>
+        <div class="map-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d3557.4322551240966!2d75.8084301834046!3d26.921507857839195!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1s2798%2C%20Purohit%20Ji%20ka%20chowk%20kalyan%20ji%20ka%20rasta%20Indra%20Bazar%2C%20jaipur%20Rajasthan%2C%20302001!5e0!3m2!1sen!2sin!4v1750415795525!5m2!1sen!2sin" 
+            width="600" height="450" style="border:0;" 
+            allowfullscreen="" loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade">
+        </iframe>"
+        </div>
+    </div>
+    {% if message %}
+        <p style="color: green;">{{ message }}</p>
+    {% endif %}
+
+
+    {% endblock %}

@@ -1,0 +1,31 @@
+{% extends "index.html" %}
+
+    {% block title %}About{% endblock %}
+    {% load static %}
+    {% block content %}
+    <div class="about-section">
+        <div class="p1">
+        <h2>About Us</h2>
+        
+        <p>
+            At <strong>SkyLifeInterior</strong> we believe that great design starts with understanding how you live.
+            We are passinate about creating spaces that are not only beautiful but also deeply personal and functional. 
+            Whether it's a cozy home, a modern office, or a stylish hospitality venue, our approach is rooted in simplicity, warmth, and timeless <style class=""></style>
+        </p>
+        </div>
+        <div class="add-img">
+            <img src="{% static 'images/flowervase.jpeg' %}">
+        </div>
+        <h3>Mission</h3>
+        <p>
+            With years of experience in interior styling, architecture, and space planning, we work closely with our clients to bring their vision to life - from mood board to final installation.
+        </p>
+        <img src="{% static 'images/greentab.jpeg' %}" class="add-img2" height="320">
+        <div class="p2">
+        <h4>Vision</h4>
+        <p>
+            Let us help you design a space that tells your story - with style, soul, and purpose.
+        </p>
+    </div>
+    </div>
+    {% endblock %}
