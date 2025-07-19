@@ -56,12 +56,6 @@
         </div>
     </div>
     <div class="grid-containers">
-        <!-- {% for n in serviceData %}
-        <div class={{n.service_icon}}>
-            <a class="link-1" href=""> {{ n.service_title }}</a>
-                <p>{{n.service_des | slice:"0:3" | safe}}</p>
-            </div>
-        {% endfor %} -->
     <div class="box-1">
         <a class="link-1" href="{% url 'residential' %}">
             <img src="{% static 'images/residentialhome.jpeg' %}" height="320" alt="residential Interior">
@@ -73,22 +67,6 @@
           <img src="{% static 'images/offi-com.jpeg' %}" height="320" alt="Commercial Interior">
           <p>Commercial</p>
         </a>
-      </div>
-       
-   
-    </div>
-
-    <!-- <marquee style="background-color: crimson;" onmouseover="stop()" onmouseout="start()">
-        {% for n in serviceData %}
-            <a href="{% url 'calculator' %}?id={{n.id}}" >{{n.service_icon }}</a> &nbsp; &nbsp; &nbsp; &nbsp;
-        {% endfor %}
-    </marquee> -->
-    <div class="logos">
-        <div class="logo-slide">
-            <img src="{% static 'images/jaquar_id.svg' %}">
-            <!-- <img src="{% static 'images/radon-logo.jpeg' %}"> -->
-
-        </div>
 
     </div>
 
