@@ -113,12 +113,14 @@ body{
 }
 .grid-container{
     display: grid;
-    grid-template-columns: 700px;
-    grid-template-rows: 80px;
-    gap: 10px;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
     background-color: #ffffff;
-    padding-bottom: 10px;
+    padding: 20px;
     align-items: start;
+    max-width: 1200px;
+    margin: 0 auto;
+    clear: both;
 }
 .item1 h1{
     font-size: 30px;
@@ -149,6 +151,8 @@ body{
     font-weight: normal;
     display: flex;
     grid-template-columns: auto auto;
+    clear: both;
+    margin-bottom: 50px;
 }
 .box-1,.box-2{
    width: 100%;
@@ -189,6 +193,8 @@ img{
     padding: 30px;
     text-align: center;
     justify-content: center;
+    clear: both;
+    margin-top: 50px;
 }
 
 .footer-block {
