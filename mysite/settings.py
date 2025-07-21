@@ -142,3 +142,7 @@ EMAIL_HOST_PASSWORD = 'dotl gjnd ltjm xjzg'
 MEDIA_ROOT = BASE_DIR/'media'
 
 MEDIA_URL = '/media/'
+
+CSRF_TRUSTED_ORIGINS = [
+    'https://8583035e-e912-4a19-ba1c-0a05906f4ab5-00-1bx6x8m3y2m3q.pike.replit.dev',
+]

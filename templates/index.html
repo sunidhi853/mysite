@@ -8,8 +8,14 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
     {% load static %}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
 
     <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/brands.min.css" integrity="sha512-58P9Hy7II0YeXLv+iFiLCv1rtLW47xmiRpC1oFafeKNShp8V5bKV/ciVtYqbk2YfxXQMt58DjNfkXFOn62xE+g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+       
+    </head>
+
 
 </head>
 <body>
@@ -33,7 +39,7 @@
                 </ul>
             </li>
     
-            <li><a href="{% url 'contact' %}">Contect</a></li>
+            <li><a href="{% url 'contact' %}">Contact</a></li>
         </ul>
     </nav>
     {% block content %}
@@ -67,31 +73,32 @@
           <img src="{% static 'images/offi-com.jpeg' %}" height="320" alt="Commercial Interior">
           <p>Commercial</p>
         </a>
-
+    </div>
     </div>
 
     {% endblock %}
 <footer class="footer">
     <div class="footer-block address">
-        <h4>Address</h4>
+        <h3>Address</h3>
         <p>
             SkyLifeInterior<br>
             2798, Purohit Ji ka chowk<br>
             kalyan ji ka rasta<br>
             Indra Bazar, jaipur<br>
             Rajasthan, 302001<br>
-            phone:
         </p>
     </div>
     <div class="footer-block social-icons">
-        <h4>&copy;2025 SkyLifeInterior</h4>
-        <h5>Follow Us</h5>
+        <h3>&copy;2025 SkyLifeInterior</h3>
+        <h4>Follow Us</h4>
         
         <div class="icons">
-            <i class="fas fa-facebook-f"></i>
-            <i class="fas fa-youtube"></i>
-            <i class="fas fa-instagram"></i>
-            <i class="fas fa-envelope"></i>
+            <a href="https://www.facebook.com/nitinsharma" target="_blank">
+            <i class="fa-brands fa-facebook"></i>
+            </a>
+            <a href="https://www.instagram.com/nitin681sharma" target="_blank">
+            <i class="fa-brands fa-instagram"></i>
+            </a>
         </div>
     </div>
 </footer>

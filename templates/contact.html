@@ -1,49 +1,38 @@
 {% extends "index.html" %}
 
-    {% block title %}Contect{% endblock %}
+    {% block title %}Contact{% endblock %}
 
     {% block content %}
+
     {% if success %}
-        <p>Your message has been sent successfully </p>
-    {% endif %}
+
+    <div class="successMsg">
+        <h>Thank you {{ name }}</h>
+        <p>Your message has been sent successfully and we will responde shortly </p>
+    </div>
+        
+   {% else %}
 
     <form  method="POST" class="form-group"> 
         {% csrf_token %}
-      
-        <h1>Contect Us</h1>
-
+        <h1>Contact Us</h1>
         {{ form }}
-    
-<!-- 
-        <label for="name">Name</label><br>
-        <input type="text" name="name" id="name" value="{{ form.name.value }}" required><br><br>
-
-        <label for="contactNumber">Contact number</label><br>
-        <input type="number" name="contactNumber" id="contactNumber" value="{{ form.contactNumber.value }}" required><br><br>
-
-        <label for="email">Email</label><br>
-        <input type="text" name="email" id="email" value="{{ form.email.value }}" required><br><br>
-
-        <label for="subject">Subject</label><br>
-        <input type="text" name="subject" id="subject" value="{{ form.subject.value }}" required><br><br>
-
-        <label for="message">message</label><br>
-        <textarea name="message" rows="10" cols="30" required>{{ form.message.value }}</textarea><br><br>
-         -->
         <input type="submit" id="btn" value="Send">
-        
-
     </form>
+
+{% endif %}
+
+
     <div class="grid-map-address">
         <div class="map-address">
         <h1>Address</h1>
         <p>
-            SkyLifeInterior<br>
-            2798, Purohit Ji ka chowk<br>
-            kalyan ji ka rasta<br>
+            SkyLifeInterior: <br>
+            2798, Purohit Ji ka chowk,<br>
+            kalyan ji ka rasta,<br>
             Indra Bazar, jaipur<br>
             Rajasthan, 302001<br>
-            phone:
+            phone: +91 9828585335
         </p>
         </div>
         <div class="map-container">
