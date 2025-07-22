@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-#!r*188%p0cpd&k*cdx&sn8xbmhh6+0%62xe^!+l9shchdz)8@'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
@@ -145,5 +145,5 @@ MEDIA_URL = '/media/'
 
 CSRF_TRUSTED_ORIGINS = [
     'https://8583035e-e912-4a19-ba1c-0a05906f4ab5-00-1bx6x8m3y2m3q.pike.replit.dev',
-    'https://mysite-oc3e.onrender.com'
+    
 ]
